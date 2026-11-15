@@ -13,7 +13,7 @@
 
 用法：
     python gen_from_krnln.py                 # 生成到 out_krnln/
-    python gen_from_krnln.py --src krnln.txt --out out_krnln
+    python gen_from_krnln.py --src D:\\x.txt --out D:\\out
 """
 import argparse
 import os
@@ -24,7 +24,7 @@ from collections import OrderedDict
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 PROJ = os.path.dirname(ROOT)
-DEF_SRC = r"I:\Hermes备份\易语言支持库接口全库\krnln.txt"
+DEF_SRC = r"libsrc\krnln.txt"
 DEF_OUT = os.path.join(HERE, "out_krnln")
 
 # krnln 类型 -> IDE 类型名（未知的原样保留）

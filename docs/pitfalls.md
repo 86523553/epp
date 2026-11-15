@@ -9,6 +9,7 @@
 | E1 | 往含中文的路径写文件，命令行工具报 `client returned ERROR on write` / `No such file` | 原生 exe（curl/7z 等）从 MSYS bash 收参数时编码被打乱 | 先写到纯 ASCII 临时目录（`%LOCALAPPDATA%\Temp`），再用 bash `mv` 移到中文目录；Python 直接用 Unicode 路径没问题 |
 | E2 | 脚本里用 `$TMPDIR` 找不到文件 | 前台 bash 与后台进程的 `$TMPDIR` 取值不一致 | 后台任务里一律写**绝对路径**（`C:/Users/.../`），别依赖环境变量 |
 | E3 | 解包 1.3 万个图标的官方包很慢 | 杀软逐文件扫描 | 一次性解完就够，别反复解压；用 Python `zipfile`（实测 7.4 秒）比命令行 7z 更快 |
+| E4 | `逆向工具-cli.exe setup` 会改宿主机配置 | 该子命令会写 MCP/agent 配置 | **绝对禁止执行** setup / install / rebuild / chat；只能跑只读分析工具，见开发文档 12.3 |
 | E5 | PowerShell 5.1 跑「PowerShell 工具写入的 .ps1」时，中文路径参数变空、`WriteAllText` 报「空路径名是非法的」 | 本仓库写出的 .ps1 是 **UTF-8 无 BOM**，PS 5.1 按 ANSI 解码，中文默认值被解析坏 | 探针脚本一律**纯 ASCII**（注释也用英文），产物先写 `$env:TEMP` 再 `Copy-Item` 进中文目录 |
 
 ## 易语言实测取证（2026-11-06，5.95 加密狗版）

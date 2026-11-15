@@ -120,23 +120,28 @@ bin\assets\icons\               界面图标
 
 ```
 epp/
-├── bin/                         ← 开箱可运行（exe 与资源已配齐，等于开发时的完整运行环境）
-│   ├── ide.exe                  编译产物（双击即用）
-│   ├── llvm/                    自带 LLVM/Clang 23 + MinGW-w64 双架构 sysroot（432 MB，自动模式就用它）
-│   ├── lib/核心支持库.epp        支持库元数据包：237 命令 / 42 组件 / 675 属性
-│   ├── static_lib/              编译易代码时链接用：libcore_support.a + include\*.h
-│   ├── e-packager.exe           拆 .e 用（第三方工具，见资源清单）
-│   ├── assets/icons/            界面图标（95 个真图，含 epp_logo.png 金属字 logo）
-│   ├── img/ sounds/ compiler/   背景图、提示音、编译中间目录
-│   └── logs/ ide.ini            运行时生成（日志 + 配置）
-├── src/main.cpp                 IDE 全部源码（单文件，29,984 行）
-├── build.bat                    一键编译 → bin\ide.exe（GBK + CRLF）
-├── docs/                        设计文档（见下）
-├── tools/                       库构建与素材脚本
-├── libsrc/                      支持库源码：core_support / mfc_controls / 打包源 / 全量元数据 → 见 libsrc/README.md
-├── samples/新建 易程序.e          最小易语言工程，练手用
-├── LICENSE                      Unlicense（公有领域，无任何限制）
-└── assets/icons/                图标源素材（bin\assets 是运行用的那份）
+├── bin/                              ← 开箱可运行（= 开发时的完整运行环境）
+│   ├── ide.exe                       编译产物（双击即用）
+│   ├── llvm/                         LLVM/Clang 23 + MinGW-w64 双架构 sysroot（420 MB，自动模式用它）
+│   ├── lib/核心支持库.epp             支持库元数据包：237 命令 / 42 组件 / 675 属性
+│   ├── static_lib/                   libcore_support.a（161 个 Core* 函数）+ include\*.h
+│   ├── e-packager.exe                拆 .e 用（第三方 v1.2.27）
+│   ├── assets/icons/                 界面图标（95 个真图，含 epp_logo.png 金属字 logo）
+│   ├── ide.ini compiler.ini compiler/  开发时调好的配置（本机绝对路径已清空）
+│   └── img/ sounds/                  背景图、15 个提示音
+├── src/main.cpp                      IDE 全部源码（单文件，29,984 行，纯 GDI 自绘）
+├── src/history/                      历史版本源码：方案A（旧表格编辑器）+ 方案B（RichEdit 表格）
+├── build.bat                         一键编译 → bin\ide.exe（GBK + CRLF）
+├── docs/                             设计/施工文档 + changelog/progress/handoff/open-questions + 截图
+├── tools/                            146 个脚本：库构建（pack_epp / gen_from_krnln）、拖拽与截图探针、harness
+├── libsrc/                           支持库源码与元数据原料 → 见 libsrc/README.md
+│   ├── krnln.txt                     易语言核心库全量导出（688 命令 / 710 属性 / 13 公共事件）
+│   ├── core_support/ mfc_controls/ mfc_sdk/   命令实现与组件源码（su-lang, MIT）
+│   ├── 打包源/ out_krnln/            .epp 打包输入与全量元数据产物
+│   └── LICENSE-su-lang-MIT.txt       上游许可证
+├── samples/                          易语言示例工程 + 界面基准截图
+├── assets/icons/                     图标源素材（bin\assets 是运行用的那份）
+└── LICENSE                           Unlicense（公有领域，无任何限制）
 ```
 
 ## 资源清单（哪些已附带、哪些要自备）
@@ -150,9 +155,9 @@ epp/
 | 界面图标 `assets\icons\` | ✅ 已附带 | 95 个真图（含 `epp_logo.png` 金属字 logo、`epp.ico`、Grid/BringToFront/SendtoBack 等） |
 | 提示音 `bin\sounds\` | ✅ 已附带 | 15 个提示音（88 KB） |
 | 拆 `.e` 的 `bin\e-packager.exe` | ✅ 已附带 | 第三方工具（v1.2.27），不属于本项目、不受 Unlicense 覆盖，能否随仓库分发请自行确认 |
-| `krnln.txt`（全量元数据的原始导出） | ⬜ 需自备 | 属易语言自身的数据。没有它也能用附带的 `.elib` |
+| `krnln.txt`（全量元数据的原始导出） | ✅ 已附带 | `libsrc/krnln.txt`（626 KB，688 命令 / 710 属性 / 13 公共事件 / 295 公共方法），`tools/gen_from_krnln.py` 可直接重跑复现 |
 
-> 说明：原项目的图标来自某商业图标库（有版权），本仓库换成自制的 16×16 占位图标，视觉朴素但能跑，语义也在。想更精致就整套替换，文件名不用改。
+> 说明：图标沿用开发时的**原样（95 个真图）**，不是占位图。其中 `VisualStudio.png` 等可能源自 Microsoft 官方图标集，不受本项目 Unlicense 覆盖，公开分发前请自行确认；想换风格同名替换即可，代码不用改。
 
 ## 代码结构（单文件导航）
 

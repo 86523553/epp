@@ -108,24 +108,24 @@
 ## 4. 打包命令（唯一入口）
 
 ```powershell
-cd "<仓库根>\tools"
+cd "<仓库根>\开发环境\工具"
 
 # 打现有库（237 命令 / 675 属性 / 5 方法）
-python pack_epp.py --name 核心支持库 `
+C:\Python314\python.exe pack_epp.py --name 核心支持库 `
   --elib ..\..\运行环境\核心支持库\核心支持库.elib `
   --comp-dir ..\..\运行环境\组件库\核心组件库\include `
   --static-dir ..\..\运行环境\静态库 `
   --out ..\..\运行环境\核心支持库.epp
 
 # 打全量库（688 命令 / 710 属性 / 13+63 事件 / 295 方法）
-python pack_epp.py --name "核心支持库(全量)" `
+C:\Python314\python.exe pack_epp.py --name "核心支持库(全量)" `
   --elib out_krnln\核心支持库.elib --comp-dir _pack_hdr `
   --out out_krnln\核心支持库.epp
 
 # 查看
-python pack_epp.py --list  x.epp
-python pack_epp.py --dump  x.epp 命令
-python pack_epp.py --dump  x.epp 组件
+C:\Python314\python.exe pack_epp.py --list  x.epp
+C:\Python314\python.exe pack_epp.py --dump  x.epp 命令
+C:\Python314\python.exe pack_epp.py --dump  x.epp 组件
 ```
 
 `--list` / `--dump` 就是**查看器的命令行原型**，以后 GUI 查看器直接复用同一套解析。

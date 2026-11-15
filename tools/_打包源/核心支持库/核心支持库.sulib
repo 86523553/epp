@@ -1,0 +1,33 @@
+{
+  "id": "sulang-core-support",
+  "name": "核心支持库",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "api_version": "1.0.0",
+  "ide_version": ">=0.1,<2.0",
+  "kind": "static",
+  "abi": "source",
+  "author": "易语言IDE开发",
+  "description": "自有核心支持库：16 分类 237 条命令（文本/系统/文件/磁盘/字节集/时间/数值/数组/媒体/拼音/环境/调试/网络/变量/控制台/其他），静态库 libcore_support.a。",
+  "capabilities": [
+    "symbol_categories"
+  ],
+  "systems": [
+    "windows-x64",
+    "windows-x86"
+  ],
+  "toolchains": [
+    "mingw"
+  ],
+  "headers": [
+    "核心支持库.elib"
+  ],
+  "include_dirs": [
+    "../静态库/include"
+  ],
+  "libraries": [
+    "../静态库/libcore_support.a"
+  ],
+  "commands": 237,
+  "categories": 16
+}

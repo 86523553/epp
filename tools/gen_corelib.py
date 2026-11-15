@@ -23,7 +23,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)                       # 开发环境/
 PROJ = os.path.dirname(ROOT)                       # 项目根
-SRC = os.environ.get('CORE_DOC', r'C:/Users/86523/Desktop/su-lang-main/核心支持库')  # 源文档（GBK，一次性原料）
+SRC = os.environ.get('CORE_DOC', r'<su-lang 源码目录>/核心支持库')  # 源文档（GBK，一次性原料）
 OUT = os.path.join(PROJ, '运行环境', '核心支持库', '核心支持库.elib')
 
 LIB_NAME = '核心支持库'
