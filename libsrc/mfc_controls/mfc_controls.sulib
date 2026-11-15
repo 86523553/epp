@@ -1,0 +1,87 @@
+{
+  "id": "sulang-mfc-controls",
+  "name": "SuLang MFC 基础组件库",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "api_version": "1.0.0",
+  "ide_version": ">=0.1,<1.0",
+  "abi": "source",
+  "author": "SuLang IDE",
+  "description": "提供由组件支持库元数据注册的九类 MFC 基础组件。",
+  "kind": "component",
+  "capabilities": [
+    "mfc_components"
+  ],
+  "systems": [
+    "windows-x64",
+    "windows-x86"
+  ],
+  "toolchains": [
+    "msvc"
+  ],
+  "configurations": [
+    "Debug",
+    "Release",
+    "RelWithDebInfo",
+    "MinSizeRel"
+  ],
+  "files": [
+    "include/component_support.h",
+    "include/label.h",
+    "include/button.h",
+    "include/edit.h",
+    "include/multiline_edit.h",
+    "include/checkbox.h",
+    "include/radio.h",
+    "include/combo.h",
+    "include/listbox.h",
+    "include/picture.h",
+    "src/label.cpp",
+    "src/button.cpp",
+    "src/edit.cpp",
+    "src/multiline_edit.cpp",
+    "src/checkbox.cpp",
+    "src/radio.cpp",
+    "src/combo.cpp",
+    "src/listbox.cpp",
+    "src/picture.cpp"
+  ],
+  "headers": [
+    "include/component_support.h",
+    "include/label.h",
+    "include/button.h",
+    "include/edit.h",
+    "include/multiline_edit.h",
+    "include/checkbox.h",
+    "include/radio.h",
+    "include/combo.h",
+    "include/listbox.h",
+    "include/picture.h"
+  ],
+  "sources": [
+    "src/label.cpp",
+    "src/button.cpp",
+    "src/edit.cpp",
+    "src/multiline_edit.cpp",
+    "src/checkbox.cpp",
+    "src/radio.cpp",
+    "src/combo.cpp",
+    "src/listbox.cpp",
+    "src/picture.cpp"
+  ],
+  "include_dirs": [
+    "include"
+  ],
+  "library_dirs": [],
+  "libraries": [],
+  "runtime_files": [],
+  "compile_definitions": [],
+  "dependencies": [
+    {
+      "id": "sulang-mfc-sdk",
+      "version": ">=4.0,<5.0"
+    }
+  ],
+  "documentation": "九类基础组件均由本支持库源码实现，并随宿主 MFC 工程直接编译。",
+  "component_mode": "source"
+}

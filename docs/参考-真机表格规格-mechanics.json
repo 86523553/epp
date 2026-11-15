@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "values": [
+    { "name": "screenshot scale factor", "value": 2.25, "unit": "x", "source": "both reference crops are uniform upscales; native = screenshot / 2.25" },
+    { "name": "table view native width", "value": 978, "unit": "px", "source": "2200 / 2.25" },
+    { "name": "table view native height", "value": 833, "unit": "px", "source": "1875 / 2.25" },
+    { "name": "code view native width", "value": 935, "unit": "px", "source": "2103 / 2.25" },
+    { "name": "code view native height", "value": 648, "unit": "px", "source": "1459 / 2.25" },
+
+    { "name": "band pitch", "value": 20, "unit": "px", "source": "every row: 19 px fill + 1 px rule; header rows included" },
+    { "name": "band fill height", "value": 19, "unit": "px", "source": "green header spans y76..94 = 19 rows" },
+    { "name": "rule thickness", "value": 1, "unit": "px", "source": "single grey row between bands" },
+    { "name": "text left inset", "value": 5, "unit": "px", "source": "first CJK ink starts 5 px right of the cell border" },
+    { "name": "font height", "value": 12, "unit": "px", "source": "9 pt 宋体 at 96 DPI" },
+    { "name": "CJK advance", "value": 12, "unit": "px", "source": "measured from header glyph pitch" },
+    { "name": "glyph ink height", "value": 10, "unit": "px", "source": "measured from header glyph spans" },
+
+    { "name": "gutter x", "value": 6, "unit": "px", "source": "#ECECEC strip runs native x 5.8..18.2" },
+    { "name": "gutter width", "value": 12, "unit": "px", "source": "same strip, 12.4 px wide" },
+    { "name": "table origin x", "value": 36, "unit": "px", "source": "every green/blue header starts at native x 36" },
+
+    { "name": "程序集 table top", "value": 76, "unit": "px", "source": "green header span y76..94" },
+    { "name": "子程序 table top", "value": 116, "unit": "px", "source": "green header span y116..134" },
+    { "name": "参数 table top", "value": 200, "unit": "px", "source": "green header span y200..218" },
+    { "name": "变量 table top", "value": 240, "unit": "px", "source": "green header span y240..258" },
+    { "name": "数据类型 table top", "value": 342, "unit": "px", "source": "pale blue header span y342..360" },
+
+    { "name": "程序集 table width", "value": 360, "unit": "px", "source": "header spans x 36..395" },
+    { "name": "子程序 table width", "value": 360, "unit": "px", "source": "header spans x 36..395" },
+    { "name": "参数 table width", "value": 624, "unit": "px", "source": "header spans x 36..659" },
+    { "name": "变量 table width", "value": 624, "unit": "px", "source": "header spans x 36..659" },
+    { "name": "数据类型 table width", "value": 408, "unit": "px", "source": "header spans x 36..443" },
+
+    { "name": "程序集 columns", "value": [72, 72, 36, 36, 144], "unit": "px", "source": "separators at 107, 179, 215, 251; right edge 395" },
+    { "name": "子程序 columns", "value": [72, 72, 36, 36, 36, 108], "unit": "px", "source": "separators at 107, 179, 215, 251, 287; right edge 395" },
+    { "name": "参数 columns", "value": [120, 72, 36, 36, 36, 324], "unit": "px", "source": "separators at 155, 227, 263, 299, 335; right edge 659" },
+    { "name": "变量 columns", "value": [120, 72, 36, 36, 360], "unit": "px", "source": "separators at 155, 227, 263, 299; right edge 659" },
+    { "name": "数据类型 columns", "value": [96, 60, 36, 36, 180], "unit": "px", "source": "separators at 131, 191, 227, 263; right edge 443" },
+
+    { "name": "grid dot period", "value": 4, "unit": "px", "source": "a 360 px rule holds 90 dots: 9 screenshot px / 2.25" },
+    { "name": "grid dot colour", "value": "#C0C0C0", "unit": "hex", "source": "sampled rule pixels" },
+    { "name": "grid rule offset", "value": -1, "unit": "px", "source": "the rule is the last pixel of the band, y0 + pitch*(r+1) - 1" },
+
+    { "name": "toolbar height", "value": 10, "unit": "px", "source": "#F0F0F0 from y0..9" },
+    { "name": "toolbar rule colour", "value": "#A8A8A8", "unit": "hex", "source": "rule at native y10" },
+    { "name": "tab strip top", "value": 11, "unit": "px", "source": "white tab strip starts y11" },
+    { "name": "tab strip bottom", "value": 23, "unit": "px", "source": "#9C9C9C rule at y23" },
+    { "name": "tab width", "value": 80, "unit": "px", "source": "white tab occupies x 0..80, chrome to its right" },
+    { "name": "status bar top", "value": 800, "unit": "px", "source": "#F0F0F0 starts y800, #808080 rule on top" },
+    { "name": "status bar rule colour", "value": "#808080", "unit": "hex", "source": "rule at native y800" },
+
+    { "name": "code row pitch", "value": 18, "unit": "px", "source": "ink-band starts 40-41 screenshot px apart / 2.25" },
+    { "name": "code top", "value": 700, "unit": "px", "source": "statement area begins below the declaration sheet" },
+    { "name": "code text x", "value": 14, "unit": "px", "source": "statement text starts 2 px right of the 12 px gutter" },
+    { "name": "flow track x", "value": 6, "unit": "px", "source": "dotted track and triangles sit 6 px into the gutter" },
+    { "name": "triangle size", "value": 7, "unit": "px", "estimated": true, "source": "block-head marker; measured coarsely, refine if a sharper crop appears" },
+
+    { "name": "page colour", "value": "#FFFFFF", "unit": "hex", "source": "sampled" },
+    { "name": "green header colour", "value": "#E6EDE4", "unit": "hex", "source": "sampled from the declaration headers" },
+    { "name": "pale blue header colour", "value": "#D9E3F0", "unit": "hex", "source": "sampled from the 数据类型 header" },
+    { "name": "chrome colour", "value": "#F0F0F0", "unit": "hex", "source": "sampled from toolbar and status bar" },
+    { "name": "gutter colour", "value": "#ECECEC", "unit": "hex", "source": "sampled from the code-view gutter strip" },
+    { "name": "body text colour", "value": "#000000", "unit": "hex", "source": "sampled" },
+    { "name": "keyword colour", "value": "#000080", "unit": "hex", "source": "sampled from keywords and true/false literals" },
+    { "name": "number colour", "value": "#800000", "unit": "hex", "source": "sampled from numeric literals" },
+    { "name": "identifier colour", "value": "#0000FF", "unit": "hex", "source": "sampled from names and type names" },
+    { "name": "comment colour", "value": "#008000", "unit": "hex", "source": "sampled from the text after an apostrophe" },
+    { "name": "selection colour", "value": "#D9E3F0", "unit": "hex", "estimated": true, "source": "same pale blue as the secondary header; selection fill not isolated in the crops" },
+
+    { "name": "数据类型 member rows", "value": 17, "unit": "rows", "estimated": true, "source": "chosen so the sheet ends at y≈699 as in the reference" }
+  ]
+}

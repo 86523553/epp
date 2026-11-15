@@ -1,0 +1,8 @@
+# 统一换行：源码 LF，批处理 CRLF
+* text=auto eol=lf
+*.bat text eol=crlf
+
+# build.bat 是 GBK 编码（Windows cmd 只认 GBK 中文）：
+# 仓库里存 UTF-8 便于网页查看，检出到工作区时转回 GBK。
+# 如果你的 git 不支持 working-tree-encoding，删掉下面这行，改用 GBK 直存。
+*.bat text eol=crlf working-tree-encoding=GBK

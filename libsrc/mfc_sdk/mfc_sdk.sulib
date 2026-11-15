@@ -1,0 +1,46 @@
+{
+  "id": "sulang-mfc-sdk",
+  "name": "SuLang MFC 组件开发 SDK",
+  "version": "4.0.0",
+  "manifest_version": 2,
+  "api_version": "1.0.0",
+  "ide_version": ">=0.1,<1.0",
+  "abi": "source",
+  "author": "SuLang IDE",
+  "description": "为第三方 MFC 组件支持库提供面向对象基类和稳定 C ABI。",
+  "kind": "static",
+  "capabilities": [
+    "development_sdk"
+  ],
+  "systems": [
+    "windows-x64",
+    "windows-x86"
+  ],
+  "toolchains": [
+    "msvc"
+  ],
+  "configurations": [
+    "Debug",
+    "Release",
+    "RelWithDebInfo",
+    "MinSizeRel"
+  ],
+  "files": [
+    "include/mfc_component_sdk.h"
+  ],
+  "headers": [
+    "include/mfc_component_sdk.h"
+  ],
+  "sources": [],
+  "include_dirs": [
+    "include"
+  ],
+  "library_dirs": [],
+  "libraries": [],
+  "runtime_files": [],
+  "compile_definitions": [
+    "SULANG_MFC_COMPONENT_SDK=1"
+  ],
+  "dependencies": [],
+  "documentation": "docs/MFC组件支持库开发规范.md"
+}
